@@ -177,6 +177,20 @@ void printGnuplot(int state[L][L], int t){
     printf("e\n");
 }
 
+void createBlinker(int state[L][L], int xc, int yc){
+    state[xc][yc] = 1;
+    state[xc][yc+1] = 1;
+    state[xc][yc-1] = 1;
+}
+
+void createGlider(int state[L][L], int xc, int yc){
+    state[xc][yc-1] = 1;
+    state[xc-1][yc] = 1;
+    state[xc+1][yc-1] = 1;
+    state[xc+1][yc] = 1;
+    state[xc+1][yc+1] = 1;
+}
+
 
 void initRandom(int state[L][L]){
     /*
@@ -191,9 +205,6 @@ void initRandom(int state[L][L]){
             r = FRAND;
             if(r < 0.5){
                 state[ix][iy] = 1;
-            }
-            else{
-                state[ix][iy] = 0;
             }
             
         }
