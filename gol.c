@@ -53,6 +53,12 @@ void update(int state[L][L], int newstate[L][L]){
             if(y + 1 == L && x - 1 < 0 ){
                 sumneighbours += state[L-1][0];
             }
+            else if(y + 1 == L && x - 1 > 0){
+                sumneighbours += state[x-1][0];
+            }
+            else if(y + 1 != L && x - 1 < 0){
+                sumneighbours += state[L-1][y+1];
+            }
             else{
                 sumneighbours += state[x-1][y+1];
             }
@@ -60,6 +66,12 @@ void update(int state[L][L], int newstate[L][L]){
             // Bottom-right neighbour
             if(y + 1 == L && x + 1 == L ){
                 sumneighbours += state[0][0];
+            }
+            else if(y + 1 == L && x + 1 != L){
+                sumneighbours += state[x+1][0];
+            }
+            else if(y + 1 != L && x + 1 == L){
+                sumneighbours += state[0][y+1];
             }
             else{
                 sumneighbours += state[x+1][y+1];
@@ -69,6 +81,12 @@ void update(int state[L][L], int newstate[L][L]){
             if(y - 1 < 0 && x - 1 < 0){
                 sumneighbours += state[L-1][L-1];
             }
+            else if(y - 1 < 0 && x - 1 > 0){
+                sumneighbours += state[x-1][L-1];
+            }
+            else if(y - 1 > 0 && x - 1 < 0){
+                sumneighbours += state[L-1][y-1];
+            }
             else{
                 sumneighbours += state[x-1][y-1];
             }
@@ -76,6 +94,12 @@ void update(int state[L][L], int newstate[L][L]){
             // Bottom-left neighbour
             if(y - 1 < 0 && x + 1 == L){
                 sumneighbours += state[0][L-1];
+            }
+            else if(y - 1 < 0 && x + 1 != L){
+                sumneighbours += state[x+1][L-1];
+            }
+            else if(y - 1 > 0 && x + 1 == L){
+                sumneighbours += state[0][y-1];
             }
             else{
                 sumneighbours += state[x+1][y-1];
@@ -120,6 +144,8 @@ void initGnuplot(){
     printf("set term qt enhanced font 'Verdana,20'\n");
     printf("set term qt size %d,%d\n",size,size);
     printf("set size square\n");
+    printf("set xrange [0:%d]\n", L);
+    printf("set yrange [0:%d]\n", L);
     printf("unset xtics\n");
     printf("unset ytics\n");
     printf("unset key\n");
