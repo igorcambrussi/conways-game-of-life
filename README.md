@@ -25,11 +25,11 @@ The default configuration is for a 100x100 grid and 10000 generations.
 
 # Compiling the code
 
-* `$ gcc gol.c -o gol´
+* $ gcc gol.c -o gol
 
 # Running the code (using pipe with Gnuplot)
 
-* `$ ./gol | gnuplot´
+* $ ./gol | gnuplot
 
 To interrupt code execution, use:
-* `Command^C´
+* Command^C
