@@ -33,3 +33,6 @@ The default configuration is for a 100x100 grid and 10000 generations.
 
 To interrupt code execution, use:
 * Command^C
+
+# Output Example
+<figure><img align=midle src="images/hist1.gif" width="350"></figure>
