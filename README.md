@@ -35,4 +35,4 @@ To interrupt code execution, use:
 * Command^C
 
 # Output Example
-<figure><img align=midle src="images/hist1.gif" width="350"></figure>
+<figure><img align=midle src="images/hist1.gif" width="500"></figure>
