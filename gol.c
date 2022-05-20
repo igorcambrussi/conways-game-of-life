@@ -53,7 +53,7 @@ void update(int state[L][L], int newstate[L][L]){
             if(y + 1 == L && x - 1 < 0 ){
                 sumneighbours += state[L-1][0];
             }
-            else if(y + 1 == L && x - 1 > 0){
+            else if(y + 1 == L && x - 1 >= 0){
                 sumneighbours += state[x-1][0];
             }
             else if(y + 1 != L && x - 1 < 0){
@@ -84,7 +84,7 @@ void update(int state[L][L], int newstate[L][L]){
             else if(y - 1 < 0 && x - 1 >= 0){
                 sumneighbours += state[x-1][L-1];
             }
-            else if(y - 1 > 0 && x - 1 < 0){
+            else if(y - 1 >= 0 && x - 1 < 0){
                 sumneighbours += state[L-1][y-1];
             }
             else{
